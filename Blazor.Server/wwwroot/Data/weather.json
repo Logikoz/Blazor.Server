@@ -1,0 +1,22 @@
+[
+	{
+		"Date": "2000-01-19T09:16:00Z",
+		"TemperatureC": 19,
+		"Summary":  "Agradável"
+	},
+	{
+		"Date": "2003-04-06T04:55:00Z",
+		"TemperatureC": -2,
+		"Summary":  "Neve"
+	},
+	{
+		"Date": "2010-03-03T15:33:00Z",
+		"TemperatureC": 32,
+		"Summary":  "Quente"
+	},
+	{
+		"Date": "2018-09-28T09:10:00Z",
+		"TemperatureC": 8,
+		"Summary":  "Frio"
+	}
+]

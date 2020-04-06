@@ -5,6 +5,6 @@ namespace Blazor.Server.Data.Interfaces
 {
     internal interface IWeatherForecastService
     {
-        Task<WeatherForecast[]> GetForecastAsync(DateTime startDate);
+        Task<WeatherForecast[]> GetForecastAsync();
     }
 }

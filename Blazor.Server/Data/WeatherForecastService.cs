@@ -1,26 +1,23 @@
 using Blazor.Server.Data.Interfaces;
-using System;
-using System.Linq;
+
+using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Blazor.Server.Data
 {
     public class WeatherForecastService : IWeatherForecastService
     {
-        private static readonly string[] Summaries = new[]
+        public async Task<WeatherForecast[]> GetForecastAsync()
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
-        {
-            var rng = new Random();
-            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            using (var stream = new StreamReader("wwwroot/Data/weather.json"))
             {
-                Date = startDate.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            }).ToArray());
+                WeatherForecast[] items = JsonSerializer.Deserialize<WeatherForecast[]>(await stream.ReadToEndAsync());
+                if (items == default)
+                    return new WeatherForecast[] { };
+
+                return items;
+            }
         }
     }
 }
