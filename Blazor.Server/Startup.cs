@@ -1,5 +1,5 @@
-using Blazor.Server.Data;
-using Blazor.Server.Data.Interfaces;
+using Blazor.Server.Services;
+using Blazor.Server.Services.Interfaces;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,7 +17,7 @@ namespace Blazor.Server
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages(conf => conf.RootDirectory = "/");
             services.AddServerSideBlazor();
             services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
         }

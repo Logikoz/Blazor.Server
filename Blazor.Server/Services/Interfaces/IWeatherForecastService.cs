@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Blazor.Server.Models;
+
 using System.Threading.Tasks;
 
-namespace Blazor.Server.Data.Interfaces
+namespace Blazor.Server.Services.Interfaces
 {
     internal interface IWeatherForecastService
     {

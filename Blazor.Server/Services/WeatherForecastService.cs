@@ -1,10 +1,11 @@
-using Blazor.Server.Data.Interfaces;
+using Blazor.Server.Models;
+using Blazor.Server.Services.Interfaces;
 
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Blazor.Server.Data
+namespace Blazor.Server.Services
 {
     public class WeatherForecastService : IWeatherForecastService
     {
